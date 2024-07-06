@@ -27,12 +27,10 @@ def main():
 
   while True:
     try:
-      days = int(input("Enter the numbers of days to add to the current date"))
-      if days == 0:
-        break
+      days = int(input("Enter the numbers of days to add to the current date: "))
       future_date = calculate_future_date(days)
       formatted_future_date = future_date.strftime("%Y-%m-%d")
-      print(f"Date after {days} days: {formatted_future_date}")
+      print(f"Future date: {formatted_future_date}")
     except ValueError:
       print("Invalid input. Please enter an integer.")
 
