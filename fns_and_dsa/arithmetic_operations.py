@@ -1,4 +1,4 @@
-def perform_operation(num1, num2):
+def perform_operation(num1, num2,operation):
 	return num1 +  num2
 
 	return num1 - num2
@@ -15,10 +15,10 @@ print("4.multiply")
 
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3/4): ")
+    operation = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
-    if choice in ('1', '2', '3', '4'):
+    if operation in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
