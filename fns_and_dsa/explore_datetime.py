@@ -24,14 +24,12 @@ def calculate_future_date(days):
 
 def main():
   display_current_datetime()
-
-  while True:
-    try:
-      days = int(input("Enter the numbers of days to add to the current date: "))
-      future_date = calculate_future_date(days)
-      formatted_future_date = future_date.strftime("%Y-%m-%d")
-      print(f"Future date: {formatted_future_date}")
-    except ValueError:
+try:
+    days = int(input("Enter the numbers of days to add to the current date: "))
+    future_date = calculate_future_date(days)
+    formatted_future_date = future_date.strftime("%Y-%m-%d")
+    print(f"Future date: {formatted_future_date}")
+except ValueError:
       print("Invalid input. Please enter an integer.")
 
 if __name__ == "__main__":
