@@ -27,7 +27,7 @@ def main():
 
   while True:
     try:
-      days = int(input("Enter the numbers of days to add to the current date or 0 to exit"))
+      days = int(input("Enter the numbers of days to add to the current date"))
       if days == 0:
         break
       future_date = calculate_future_date(days)
