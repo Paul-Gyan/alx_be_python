@@ -27,7 +27,7 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1,2,3,4): ")
         if choice == '1':
             add_item(shopping_list)
         elif choice == '2':
@@ -35,7 +35,7 @@ def main():
         elif choice == '3':
             view_list(shopping_list)
         elif choice == '4':
-            print("Exiting. Have a great day!")
+            print("Goodbye!")
             break
         else:
             print("Invalid choice. Please select a valid option.")
