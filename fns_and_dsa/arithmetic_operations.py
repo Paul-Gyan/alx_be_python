@@ -1,21 +1,29 @@
+# This function adds two numbers
+def perform_operation(num1, num2, operation):
+    return num1 + num2
+
+# This function subtracts two numbers
 def perform_operation(num1, num2,operation):
-	return num1 +  num2
+    return num1 - num2
 
-	return num1 - num2
+# This function multiplies two numbers
+def perform_operation(num1, num2,operation):
+    return num1 * num2
 
-	return num1 / num2
+# This function divides two numbers
+def perform_operation(num1, num2,operation):
+    return num1 / num2
 
-	return num1 * num2
 
-print("Select operation")
-print("1.add")
-print("2.subtract")
-print("3.divide")
-print("4.multiply")
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
 
 while True:
     # take input from the user
-    operation = input("Enter choice(1/2/3/4): ")
+    operation = input("Enter operation:(1/2/3/4): ")
 
     # check if choice is one of the four options
     if operation in ('1', '2', '3', '4'):
@@ -26,23 +34,22 @@ while True:
             print("Invalid input. Please enter a number.")
             continue
 
-        if choice == '1':
-            print("Result:", perform_operation(num1, num2))
+        if operation == '1':
+            print(num1, "+", num2, "=", perform_operation(num1, num2,operation))
 
-        elif choice == '2':
-            print("Result:", perform_operation(num1, num2))
+        elif operation == '2':
+            print(num1, "-", num2, "=", perform_operation(num1, num2,operation))
 
-        elif choice == '3':
-        	if num2 == 0:
-        		print("Error, cannot divide by zero.")
-        	else:
-        		print("Result:", perform_operation(num1, num2))
+        elif operation == '3':
+            print(num1, "*", num2, "=", perform_operation(num1, num2))
 
-            
-
-        elif choice == '4':
-            print("Result:", perform_operation(num1, num2))
+        elif operation == '4':
+            print(num1, "/", num2, "=", perform_operation(num1, num2,operation))
         
-        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
     else:
         print("Invalid Input")
