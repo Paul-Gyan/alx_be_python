@@ -29,7 +29,7 @@ def main():
   while True:
     try:
       value = float(input("Enter a temperature (e.g., 25.5C or 78F): "))
-      unit = input("Enter the unit (C for Celsius, F for Fahrenheit): ").upper()
+      unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").upper()
 
       if unit == 'C':
         converted_value = convert_to_fahrenheit(value)
