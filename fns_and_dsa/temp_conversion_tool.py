@@ -44,7 +44,7 @@ def main():
       break
     except ValueError as e:
       print(e)
-      print("Please try again with valid input.")
+      print("Invalid temperature. Please enter a numeric value.")
 
 if __name__ == "__main__":
   main()
