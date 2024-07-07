@@ -1,46 +1,50 @@
-#Decalaration of global variables for conversion.
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
 def convert_to_celsius(fahrenheit):
-    """
-    Converts a temperature from Fahrenheit to Celsius.
+  """Converts a temperature in Fahrenheit to Celsius.
 
-    Args:
-        fahrenheit (float): Temperature in Fahrenheit.
+  Args:
+      fahrenheit: Temperature in Fahrenheit (float).
 
-    Returns:
-        float: Temperature in Celsius.
-    """
-    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+  Returns:
+      The converted temperature in Celsius (float).
+  """
+  celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+  return celsius
 
 def convert_to_fahrenheit(celsius):
-    """
-    Converts a temperature from Celsius to Fahrenheit.
+  """Converts a temperature in Celsius to Fahrenheit.
 
-    Args:
-        celsius (float): Temperature in Celsius.
+  Args:
+      celsius: Temperature in Celsius (float).
 
-    Returns:
-        float: Temperature in Fahrenheit.
-    """
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+  Returns:
+      The converted temperature in Fahrenheit (float).
+  """
+  fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+  return fahrenheit
 
 def main():
+  while True:
     try:
-        user_input = input("Enter a temperature (e.g., 32F or 20C): ")
-        if user_input[-1].lower() == 'f':
-            temperature = float(user_input[:-1])
-            converted_temp = convert_to_celsius(temperature)
-            print(f"{temperature}°F is approximately {converted_temp:.2f}°C")
-        elif user_input[-1].lower() == 'c':
-            temperature = float(user_input[:-1])
-            converted_temp = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is approximately {converted_temp:.2f}°F")
-        else:
-            raise ValueError("Invalid temperature format. Please enter a numeric value followed by 'F' or 'C'.")
-    except ValueError:
-        print("Invalid temperature. Please enter a numeric value followed by 'F' or 'C'.")
+      value = float(input("Enter a temperature (e.g., 25.5C or 78F): "))
+      unit = input("Is this temperature in Celsius or Fahrenheit? (C/F):").upper()
+
+      if unit == 'C':
+        converted_value = convert_to_fahrenheit(value)
+        converted_unit = 'F'
+      elif unit == 'F':
+        converted_value = convert_to_celsius(value)
+        converted_unit = 'C'
+      else:
+        raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
+
+      print(f"{value:.1f}{unit} is equivalent to {converted_value:.1f}{converted_unit}")
+      break
+    except ValueError as e:
+      print(e)
+      print("Please try again with valid input.")
 
 if __name__ == "__main__":
-    main()
+  main()
