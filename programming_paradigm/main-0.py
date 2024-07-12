@@ -1,10 +1,8 @@
-# main-0.py
-
-from bank_account import BankAccount
 import sys
+from bank_account import BankAccount
 
 def main():
-    my_account = BankAccount(initial_balance=100)
+    account = BankAccount(100)  # Example starting balance
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>:<amount>")
         print("Commands: deposit, withdraw, display")
