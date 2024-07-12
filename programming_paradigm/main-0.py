@@ -4,23 +4,27 @@ from bank_account import BankAccount
 import sys
 
 def main():
+    my_account = BankAccount(initial_balance=100)
     if len(sys.argv) < 2:
-        print("Usage: python main-0.py <operation> <amount>")
+        print("Usage: python main.py <command>:<amount>")
+        print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    operation = sys.argv[1].lower()
-    amount = float(sys.argv[2]) if len(sys.argv) > 2 else 0
+    command, *params = sys.argv[1].split(':')
+    amount = float(params[0]) if params else None
 
-    my_account = BankAccount(initial_balance=1000)
-
-    if operation == 'deposit':
-        my_account.deposit(amount)
-    elif operation == 'withdraw':
-        my_account.withdraw(amount)
-    elif operation == 'balance':
-        my_account.display_balance()
+    if command == "deposit" and amount is not None:
+        account.deposit(amount)
+        print(f"Deposited: ${amount}")
+    elif command == "withdraw" and amount is not None:
+        if account.withdraw(amount):
+            print(f"Withdrew: ${amount}")
+        else:
+            print("Insufficient funds.")
+    elif command == "display":
+        account.display_balance()
     else:
-        print("Invalid operation. Use 'deposit', 'withdraw', or 'balance'.")
+        print("Invalid command.")
 
 if __name__ == "__main__":
     main()
