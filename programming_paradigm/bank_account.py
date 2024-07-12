@@ -24,6 +24,6 @@ class BankAccount:
 # Example usage:
 if __name__ == "__main__":
     my_account = BankAccount(initial_balance=100)
-    my_account.deposit(67)
-    my_account.withdraw(50)
+    my_account.deposit(50)
+    my_account.withdraw(20)
     my_account.display_balance()
