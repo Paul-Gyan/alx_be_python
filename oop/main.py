@@ -16,7 +16,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-from main import Book, EBook, PrintBook, Library
+from library_system import Book, EBook, PrintBook, Library
 
 def main():
     # Create a Library instance
