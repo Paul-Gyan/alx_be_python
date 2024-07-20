@@ -33,7 +33,7 @@ def main():
     my_main.add_book(paper_novel)
 
     # List all books in the library
-    my_main.list_book()
+    my_main.list_books()
 
 if __name__ == "__main__":
     main()
